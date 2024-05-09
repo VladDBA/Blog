@@ -1,1 +1,1 @@
-See the related blog post here
+See the related blog post [here](https://vladdba.com/2024/05/09/bcp-unix-line-endings/)
