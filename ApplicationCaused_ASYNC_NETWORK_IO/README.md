@@ -1,1 +1,1 @@
-See the related blog post here
+See the related blog post [here](https://vladdba.com/2024/01/22/how-applications-cause-excessive-async_network_io-waits-in-sql-server/)
