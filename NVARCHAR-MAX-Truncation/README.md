@@ -1,1 +1,1 @@
-See the related blog post [here](https://vladdba.com/xyz)
+See the related blog post [here](https://vladdba.com/2024/05/26/the-curious-case-of-the-truncating-nvarcharmax-variable/)
