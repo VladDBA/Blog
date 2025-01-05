@@ -5,9 +5,10 @@ $login = ""
 $password = ""
 
 $TryAgain = "Y"
-Write-Host "SQL Injection Demo with PowerShell"
+Write-Host "SQL Injection Demo with PowerShell - fixed"
 Write-Host "-----------------------------------"
 $SearchString = Read-Host -Prompt "Search for a product"
+
 
 if (!([string]::IsNullOrEmpty($login))) {
     $connectionString = "Server=$server;Database=$database;User Id=$login;Password=$password;;"
@@ -22,12 +23,14 @@ function Get-Products {
         [Parameter(Position = 1, Mandatory = $true)]
         [string]$connectionString
     )
-    $Query = "SELECT [Name], [Manufacturer] FROM [Products] WHERE [Name] LIKE '%$SearchString%' AND [IsSecret] = 0;"
+    $Query = "SELECT [Name], [Manufacturer] FROM [Products] WHERE [Name] LIKE '%'+@SearchString+'%' AND [IsSecret] = 0;"
     $SearchSet = New-Object System.Data.DataSet
     $sqlConnection = New-Object System.Data.SqlClient.SqlConnection
     $sqlConnection.ConnectionString = $connectionString
     $SearchCommand = $sqlConnection.CreateCommand()
     $SearchCommand.CommandText = $Query
+    $SearchCommand.Parameters.Add("@SearchString", [Data.SQLDBType]::VarChar, 100) | Out-Null
+	$SearchCommand.Parameters["@SearchString"].Value = $SearchString
     $SearchAdapter = New-Object System.Data.SqlClient.SqlDataAdapter
     $SearchAdapter.SelectCommand = $SearchCommand
     try {
