@@ -6,10 +6,8 @@ $password = ""
 
 $TryAgain = "Y"
 Write-Host "SQL Injection Demo with PowerShell"
-while ([string]::IsNullOrEmpty($SearchString)) {
-    $SearchString = Read-Host -Prompt "Search for a product"
-}
-
+Write-Host "-----------------------------------"
+$SearchString = Read-Host -Prompt "Search for a product"
 $Query = "SELECT [Name], [Manufacturer] FROM [Products] WHERE [Name] LIKE '%$SearchString%' AND [IsSecret] = 0;"
 
 
