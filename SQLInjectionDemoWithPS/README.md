@@ -1,1 +1,1 @@
-See the related blog post [here](https://vladdba.com/)
+See the related blog post [here](https://vladdba.com/2025/01/06/explaining-sql-injection-powershell-and-sql-server/)
