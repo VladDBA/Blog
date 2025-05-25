@@ -1,7 +1,7 @@
 /*
          Description:  This script system object data between two versions of SQL Server (2025 and 2022 in this case).
          It needs to be executed on the 2022 instance and it requires a linked server connection (currently [WINSRV2K25\SQL2025]) to the 2025 instance
-         Ctrl+H to find and replace the [WINSRV2K25\SQL2025] linked server connection with your own and then run.
+         Ctrl+H to find and replace the [WINSRV2K25\SQL2025] linked server connection reference with your own and then run.
          Author: Vlad Drumea
          Create date: 2025-05-25         
          Website: https://vladdba.com
@@ -27,6 +27,7 @@ CREATE TABLE [dbo].[diff_system_objects](
 	[uses_quoted_identifier] BIT NULL,
 	[new] BIT NULL,
 	[modified] BIT NULL,
+    [only_white_space_changes] BIT DEFAULT 0,
     [just_obj_id_changed] BIT NULL,
 	[2022_object_id] INT NULL,
 	[2022_definition] NVARCHAR(MAX) NULL,
@@ -250,6 +251,19 @@ SET    [modified] = 1,
        [new] = 0,[just_obj_id_changed]=0
 WHERE  [object_id] <> [2022_object_id] and  [definition] is not null and [2022_definition] is not null
       AND HASHBYTES('MD5',[definition]) <> HASHBYTES('MD5',[2022_definition]);
+
+/*any objects with only white space changes?*/
+DECLARE @tab NVARCHAR(1) = NCHAR(9),
+        @cr  NVARCHAR(1) = NCHAR(13),
+        @lf  NVARCHAR(1) = NCHAR(10); 
+UPDATE   [diff_system_objects]
+SET [only_white_space_changes] = 1
+WHERE  HASHBYTES('MD5', TRIM(replace(replace(replace(REPLACE(REPLACE(REPLACE([definition], @cr, ' '), @lf, ' '), @tab, '  '), ' ', '<>'), '><', ''), '<>', ' '))) 
+= HASHBYTES('MD5', TRIM(replace(replace(replace(REPLACE(REPLACE(REPLACE([2022_definition], @cr, ' '), @lf, ' '), @tab, '  '), ' ', '<>'), '><', ''), '<>', ' ')))
+AND [definition] IS NOT NULL AND [2022_definition] IS NOT NULL
+AND [new] = 0
+AND [modified] = 1;
+GO
 
 /*get internal table and view column changes - aka new columns for internal tables that already exist in 2022*/
 ;WITH a
