@@ -1,4 +1,5 @@
 #Connection parameters (yes, they're hardcoded)
+#This uses the data prepared with SystemObjectChagesDataPrep.sql
 $server = ""
 $database = "data_mining_2025"
 $login = ""
