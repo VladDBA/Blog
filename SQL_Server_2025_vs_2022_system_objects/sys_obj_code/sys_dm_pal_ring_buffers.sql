@@ -1,3 +1,5 @@
+use [master]
+GO
 SET ANSI_NULLS ON;
 SET QUOTED_IDENTIFIER ON;
 CREATE VIEW sys.dm_pal_ring_buffers AS

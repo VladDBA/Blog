@@ -1,3 +1,5 @@
+use [master]
+GO
 SET ANSI_NULLS ON;
 SET QUOTED_IDENTIFIER ON;
 CREATE VIEW sys.json_index_paths AS

@@ -1,3 +1,5 @@
+use [master]
+GO
 SET ANSI_NULLS ON;
 SET QUOTED_IDENTIFIER ON;
 CREATE PROCEDURE sys.sp_fulltext_delete_thesaurus

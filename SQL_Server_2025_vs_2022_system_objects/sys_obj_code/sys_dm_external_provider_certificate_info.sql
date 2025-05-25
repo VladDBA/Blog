@@ -1,4 +1,6 @@
     /*Only the object_id was changed between versions, the code is the same*/
+use [master]
+GO
 SET ANSI_NULLS ON;
 SET QUOTED_IDENTIFIER ON;
 /*====  SQL Server 2025 version  ====*/

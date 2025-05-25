@@ -1,3 +1,5 @@
+use [master]
+GO
 SET ANSI_NULLS ON;
 SET QUOTED_IDENTIFIER ON;
 create function sys.fn_has_change_feed_permissions (@destination_type int = 2)
