@@ -1,0 +1,1 @@
+See the related blog post [here](https://vladdba.com/2025/05/25/system-object-changes-sql-server-2025-2022/)

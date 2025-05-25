@@ -6,6 +6,7 @@
          Create date: 2025-05-25         
          Website: https://vladdba.com
          From: https://github.com/VladDBA/Blog/tree/main/SQL_Server_2025_vs_2022_system_objects/
+         More info: https://vladdba.com/2025/05/25/system-object-changes-sql-server-2025-2022/
    
 */
 
