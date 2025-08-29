@@ -1,1 +1,1 @@
-See the related blog post [here](https://vladdba.com/2025/08/29/poc-sql-injection-sql-server-2025-cu20-gdr-kb5063814/)
+See the related blog post [here](https://vladdba.com/2025/08/29/poc-sql-injection-sql-server-2022-cu20-gdr-kb5063814/)
