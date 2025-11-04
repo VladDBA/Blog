@@ -9,7 +9,7 @@ IF ( OBJECT_ID(N'dbo.fn_HmacSha512', N'FN') IS NOT NULL )
 GO
 
 CREATE FUNCTION [dbo].[fn_HmacSha512] (@Key VARBINARY(256), /* password (max 256 bytes after conversion) */
-                                       @Msg VARBINARY(256)  /* salt+counter or previous @U value */
+                                       @Msg VARBINARY(64)  /* salt+counter or previous @U value */
 )
 RETURNS VARBINARY(64)
 /* returns VARBINARY(64) = HMAC‑SHA‑512(key, message) 

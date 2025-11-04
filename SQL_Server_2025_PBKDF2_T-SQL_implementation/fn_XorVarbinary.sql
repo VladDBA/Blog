@@ -7,9 +7,9 @@ IF ( OBJECT_ID(N'dbo.fn_XorVarbinary', N'FN') IS NOT NULL )
   END;
 GO
 
-CREATE FUNCTION [dbo].[fn_XorVarbinary] (@T VARBINARY(MAX),
-                                         @U VARBINARY(MAX))
-RETURNS VARBINARY(MAX)
+CREATE FUNCTION [dbo].[fn_XorVarbinary] (@T VARBINARY(64),
+                                         @U VARBINARY(64))
+RETURNS VARBINARY(64)
 /* byte‑wise XOR of two varbinary values 
    More info: 
    https://vladdba.com/2025/11/02/replicating-sql-server-2025-pbkdf2-hashing-algorithm-using-t-sql/ */
@@ -19,7 +19,7 @@ AS
               @LenU   INT            = DATALENGTH(@U),
               @MaxLen INT,           
               @i      INT            = 1,
-              @Result VARBINARY(MAX) = 0x,
+              @Result VARBINARY(64) = 0x,
               @ByteT  TINYINT,
               @ByteU  TINYINT;
 
