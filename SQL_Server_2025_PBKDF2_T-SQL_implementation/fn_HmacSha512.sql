@@ -12,6 +12,7 @@ CREATE FUNCTION [dbo].[fn_HmacSha512] (@Key VARBINARY(256), /* password (max 256
                                        @Msg VARBINARY(64)  /* salt+counter or previous @U value */
 )
 RETURNS VARBINARY(64)
+WITH SCHEMABINDING
 /* returns VARBINARY(64) = HMAC‑SHA‑512(key, message) 
    More info: 
    https://vladdba.com/2025/11/02/replicating-sql-server-2025-pbkdf2-hashing-algorithm-using-t-sql/ */

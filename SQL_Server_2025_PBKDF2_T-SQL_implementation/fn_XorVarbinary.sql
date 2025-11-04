@@ -10,6 +10,7 @@ GO
 CREATE FUNCTION [dbo].[fn_XorVarbinary] (@T VARBINARY(64),
                                          @U VARBINARY(64))
 RETURNS VARBINARY(64)
+WITH SCHEMABINDING
 /* byte‑wise XOR of two varbinary values 
    More info: 
    https://vladdba.com/2025/11/02/replicating-sql-server-2025-pbkdf2-hashing-algorithm-using-t-sql/ */
