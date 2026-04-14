@@ -8,7 +8,8 @@ The [modules](modules) directory contains compiled module binaries for both Wind
 
 ## Using the precompiled modules with hashcat 7.1.2
 
-1. Copy the contents of the [modules](modules) directory in your hashcat 7.1.2 modules director.
+0. Download and extract [hashcat 7.1.2](https://github.com/hashcat/hashcat/releases/tag/v7.1.2).
+1. Copy the contents of the [modules](modules) directory in your hashcat 7.1.2 modules directory.
 2. Copy [OpenCL/m01732-pure.cl](OpenCL/m01732-pure.cl) in your hashcat 7.1.2 OpenCL directory.
 3. Run hashcat with `-m 1732`.
 
