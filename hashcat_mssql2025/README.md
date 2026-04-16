@@ -2,7 +2,7 @@
 
 This module adds support for cracking SQL Server 2025's login hashes that use the new PBKDF2-HMAC-SHA512 algorithm.
 
-> Related blog post coming soon on [vladdba.com](https://vladdba.com/)
+> Related blog post can be found [here](https://vladdba.com/2026/04/16/cracking-sql-server-2025-login-passwords-offline-with-hashcat/).
 
 The [modules](modules) directory contains compiled module binaries for both Windows (.dll) and Linux (.so) for the current stable release of hashcat ([7.1.2](https://github.com/hashcat/hashcat/releases/tag/v7.1.2)).
 
