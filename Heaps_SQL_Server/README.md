@@ -1,1 +1,1 @@
-See the related blog post [here]()
+See the related blog post [here](https://vladdba.com/2025/12/30/the-hidden-costs-of-heaps-in-sql-server/)
