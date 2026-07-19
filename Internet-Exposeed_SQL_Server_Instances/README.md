@@ -1,1 +1,1 @@
-See the related blog post [here]()
+See the related blog post [here](https://vladdba.com/2026/07/19/internet-exposed-sql-server-instances/)
