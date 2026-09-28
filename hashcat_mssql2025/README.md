@@ -10,14 +10,14 @@ The [modules](modules) directory contains compiled module binaries for both Wind
 
 0. Download and extract [hashcat 7.1.2](https://github.com/hashcat/hashcat/releases/tag/v7.1.2).
 1. Copy the contents of the [modules](modules) directory in your hashcat 7.1.2 modules directory.
-2. Copy [OpenCL/m01732-pure.cl](OpenCL/m01732-pure.cl) in your hashcat 7.1.2 OpenCL directory.
-3. Run hashcat with `-m 1732`.
+2. Copy [OpenCL/m36600-pure.cl](OpenCL/m36600-pure.cl) in your hashcat 7.1.2 OpenCL directory.
+3. Run hashcat with `-m 36601`.
 
 ## Compiling from source
 
 1. Copy the contents of the [src/modules](src/modules) directory to your `hashcat/src/modules` directory.
-2. Copy [OpenCL/m01732-pure.cl](OpenCL/m01732-pure.cl) to your `hashcat/OpenCL` directory.
-3. Copy the contents of [tools/test_modules/m01732.pm](tools/test_modules/m01732.pm) to your `hashcat/tools/test_modules` directory.
+2. Copy [OpenCL/m36600-pure.cl](OpenCL/m36600-pure.cl) to your `hashcat/OpenCL` directory.
+3. Copy the contents of [tools/test_modules](tools/test_modules) to your `hashcat/tools/test_modules` directory.
 This is only needed if you want to run the built-in unit tests afterwards.
 4. Run `make` or `make win`.
 
